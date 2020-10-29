@@ -19,10 +19,7 @@ Route::get('/', function () {
 
 
 
-Route::get('hello','App\Http\Controllers\HelloContoroller@index');
+Route::get('helloo','App\Http\Controllers\HelloContoroller@index');
 
-Route::get('helloo', function () {
-    return view('helloo.index');
-});
 
 
