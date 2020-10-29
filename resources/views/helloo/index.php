@@ -8,6 +8,7 @@ h1{font-size:100px;text-align: center;color:#F6f6f6;margin:50px;}
 </head>
 <body>
   <h1>Hello／index</h1>
-  <p>this is sample page</p>
+  <p><?php echo $msg?></p>
+  <p>ID=<?php echo $id;?></p>
 </body>
 </html>
