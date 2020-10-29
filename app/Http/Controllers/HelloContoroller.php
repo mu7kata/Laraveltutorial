@@ -9,8 +9,7 @@ class HelloContoroller extends Controller
 {
     public function index(Request $request) {
         $data=[
-            'msg'=>'これはコントローラから渡されたメッセージです',
-            'id'=> $request->id
+            'msg'=>'bladeを利用したメッセージです',
     ];
     return view('helloo.index',$data);
      
