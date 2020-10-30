@@ -19,7 +19,8 @@ Route::get('/', function () {
 
 
 
-Route::get('helloo/{id?}','App\Http\Controllers\HelloContoroller@index');
+Route::get('helloo','App\Http\Controllers\HelloContoroller@index');
+
 
 
 

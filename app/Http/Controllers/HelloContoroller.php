@@ -7,11 +7,11 @@ use Illuminate\Http\Response;
 
 class HelloContoroller extends Controller
 {
-    public function index(Request $request) {
-        $data=[
-            'msg'=>'bladeを利用したメッセージです',
-    ];
-    return view('helloo.index',$data);
+    public function index() {
+        
+        $data = ['one','two','three','four'];
+    return view('helloo.index',['data'=>$data]);
      
     }
+   
 }
