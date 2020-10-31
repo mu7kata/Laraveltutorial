@@ -19,11 +19,19 @@
 
 <body>
   <h1>blade／index</h1>
- <p>&#064;foreachディレlうとりの例</p>
-<ol>
- @foreach($data as $item)
-<li>{{$item}}</li>
- @endforeach 
-</ol>
+ <p>&#064;forディレlうとりの例</p>
+ <ol>
+@php 
+$counter = 0;
+@endphp 
+
+@while ($counter < count($data))
+<li>{{$data[$counter]}}</li>
+ @php
+ $counter++;
+ @endphp
+ @endwhile
+ </ol>
+
 </body>
 </html>
