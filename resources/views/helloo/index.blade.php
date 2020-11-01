@@ -1,37 +1,28 @@
-<html>
+@extends('layouts.helloapp') 
 
-<head>
-  <title>Hello/Index</title>
-  <style>
-    body {
-      font-size: 16pt;
-      color: #999;
-    }
+@section('title', 'Index') 
 
-    h1 {
-      font-size: 100px;
-      text-align: center;
-      color: #F6f6f6;
-      margin: 50px;
-    }
-  </style>
-</head>
+@section('menuber')  
+@parent 
+インデックスページ 
+@endsection 
 
-<body>
-  <h1>blade／index</h1>
- <p>&#064;forディレlうとりの例</p>
- <ol>
-@php 
-$counter = 0;
-@endphp 
+@section('content')
+<p>ここが本文のコンテンツです。</p>
+<p>必要な記述ができる</p>
+@component('component.message')
+ @slot('msg_title')
+ CAUTION!
+ @endslot
 
-@while ($counter < count($data))
-<li>{{$data[$counter]}}</li>
- @php
- $counter++;
- @endphp
- @endwhile
- </ol>
+ @slot('msg_content')
+ これはメッセージの表示です。
+ @endslot
 
-</body>
-</html>
+@endcomponent
+
+@endsection
+
+@section('footer')
+copyright 2020 tuyano.
+@endsection
