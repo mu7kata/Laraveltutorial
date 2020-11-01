@@ -9,8 +9,7 @@
 
 @section('content')
 <p>ここが本文のコンテンツです。</p>
-<p>必要な記述ができる</p>
-@include('component.message',['msg_title'=>'OK','msg_content'=>'サブビューです。'])
+<p>Contoroller value<br>'view_message'= {{$view_message}}</p>
 
 @endsection
 
