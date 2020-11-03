@@ -11,7 +11,7 @@ class HelloServiceProvider extends ServiceProvider
     {
 
         View::composer(
-            'helloo.index','App\Http\Composers\HelloCoposer');
+            'helloo.index','App\Http\Composers\HelloComposer');
             }
     
     

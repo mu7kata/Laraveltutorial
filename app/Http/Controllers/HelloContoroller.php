@@ -7,10 +7,10 @@ use Illuminate\Http\Response;
 
 class HelloContoroller extends Controller
 {
-    public function index() {
+    public function index(Request $request) {
         
       
-    return view('helloo.index',['message'=>'Helloo!']);
+    return view('helloo.index',['data'=>$request->data]);
      
     }
    

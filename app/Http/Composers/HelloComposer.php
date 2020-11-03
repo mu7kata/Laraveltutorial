@@ -1,5 +1,5 @@
 <?php
-namespace App\Htto\Composers;
+namespace App\Http\Composers;
 use Illuminate\View\View;
 
 class HelloComposer{

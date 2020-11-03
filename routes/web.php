@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Middleware\HelloMiddleware;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +20,8 @@ Route::get('/', function () {
 
 
 
-Route::get('helloo','App\Http\Controllers\HelloContoroller@index');
+Route::get('helloo','App\Http\Controllers\HelloContoroller@index')
+->middleware(HelloMiddleware::class);
 
 
 
