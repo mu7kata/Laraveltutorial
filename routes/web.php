@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Composers\HelloComposer;
+use App\Http\Controllers\HelloContoroller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\HelloMiddleware;
 
@@ -20,8 +22,9 @@ Route::get('/', function () {
 
 
 
-Route::get('helloo','App\Http\Controllers\HelloContoroller@index')
-->middleware('hello');
+
+Route::get('helloo','App\Http\Controllers\HelloContoroller@index');
+Route::post('helloo','App\Http\Controllers\HelloContoroller@post');
 
 
 
