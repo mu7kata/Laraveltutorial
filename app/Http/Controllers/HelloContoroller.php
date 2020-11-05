@@ -10,8 +10,6 @@ class HelloContoroller extends Controller
     public function index(Request $request) {
         
       
-    return view('helloo.index',['data'=>$request->data]);
-     
+    return view('helloo.index');
     }
-   
 }

@@ -8,13 +8,16 @@
 @endsection 
 
 @section('content')
-<p>ここが本文のコンテンツです。</p>
+<p>{{$msg}}</p>
 <table>
-@foreach($data as $item)
-<tr><th>{{$item['name']}}</th><td>{{$item['mail']}}</td></tr>
-@endforeach
+<form action="/helloo" method="post">
+{{csrf_field()}}
+<tr><th>name: </th></tr><input type="text" name="name">
+<tr><th>mail: </th></tr><input type="text" name="mail">
+<tr><th>age: </th></tr><input type="text" name="age">
+<tr><th></th></tr><input type="submit" value="send">
+</form>
 </table>
-
 @endsection
 
 @section('footer')

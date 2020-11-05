@@ -21,7 +21,8 @@ Route::get('/', function () {
 
 
 Route::get('helloo','App\Http\Controllers\HelloContoroller@index')
-->middleware(HelloMiddleware::class);
+->middleware('hello');
+
 
 
 
