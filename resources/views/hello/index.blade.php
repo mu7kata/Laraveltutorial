@@ -13,11 +13,11 @@
 <p>入力に問題があります。再入力してください</p>
 @endif
 <table>
-  <form action="/helloo" method="post">
+  <form action="/hello" method="post">
     {{csrf_field()}}
-    
-   
-      @if ($errors->has('name'))
+
+
+    @if ($errors->has('name'))
     <tr>
       <th>Error</th>
       <td>{{$errors->first('name')}}</td>
@@ -37,9 +37,9 @@
     </tr>
     <td><input type="text" name="mail" value="{{old('mail')}}"></td>
     <tr>
-    
-     
-  
+
+
+
       @if ($errors->has('age'))
     <tr>
       <th>Error</th>
@@ -49,7 +49,7 @@
     <th>age: </th>
     </tr>
     <td><input type="text" name="age" value="{{old('age')}}"></td>
-  
+
     <th></th>
     </tr><input type="submit" value="send">
   </form>

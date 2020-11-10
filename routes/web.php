@@ -23,10 +23,5 @@ Route::get('/', function () {
 
 
 
-Route::get('helloo','App\Http\Controllers\HelloContoroller@index');
-Route::post('helloo','App\Http\Controllers\HelloContoroller@post');
-
-
-
-
-
+Route::get('hello', 'App\Http\Controllers\HelloContoroller@index');
+Route::post('hello', 'App\Http\Controllers\HelloContoroller@post');

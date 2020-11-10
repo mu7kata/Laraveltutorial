@@ -21,7 +21,7 @@ class HelloContoroller extends Controller
         } else {
             $msg = 'ID/PASSを受け付けました。フォームを入力してください';
         }
-        return view('helloo.index', ['msg' => $msg]);
+        return view('hello.index', ['msg' => $msg]);
     }
 
     public function post(HelloRequest $request)
@@ -33,11 +33,11 @@ class HelloContoroller extends Controller
         ]);
 
         if ($validator->fails()) {
-            return redirect('/helloo')
+            return redirect('/hello')
                 ->withErrors($validator)
                 ->withInput();
         }
 
-        return view('helloo.index', ['msg' => '正しく入力されました']);
+        return view('hello.index', ['msg' => '正しく入力されました']);
     }
 }
