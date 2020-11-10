@@ -46,7 +46,7 @@
       <td>{{$errors->first('age')}}</td>
     </tr>
     @endif
-    <th>age: </th>
+    <th>aaaaaaaaaa: </th>
     </tr>
     <td><input type="text" name="age" value="{{old('age')}}"></td>
 

@@ -24,14 +24,29 @@ class HelloContoroller extends Controller
         return view('hello.index', ['msg' => $msg]);
     }
 
-    public function post(HelloRequest $request)
+    public function post(Request $request)
     {
-        $validator = Validator::make($request->all(), [
+        $rules = [
             'name' => 'required',
             'mail' => 'email',
-            'age' => 'numelic|between:0,150',
-        ]);
+            'age' => 'numelic',
+        ];
 
+        $messages = [
+            'name.required' => '名前は必ず入力してください',
+            'mail.email' => 'メールアドレスが必要です。',
+            'age.numeric' => '年齢は整数で記入ください',
+            'age.min' => '年齢はゼロ歳以上で記入ください',
+            'age.max' => '年齢は200以下で記入ください',
+        ];
+
+        $validator = Validator::make($request->all(), $rules, $messages);
+        $validator->sometimes('age','max:0' , function($input){
+            return !is_int($input->age);
+        });
+        $validator->sometimes('age','max:200' , function($input){
+            return !is_int($input->age);
+        });
         if ($validator->fails()) {
             return redirect('/hello')
                 ->withErrors($validator)
