@@ -25,3 +25,7 @@ Route::get('/', function () {
 
 Route::get('hello', 'App\Http\Controllers\HelloContoroller@index');
 Route::post('hello', 'App\Http\Controllers\HelloContoroller@post');
+Route::get ('hello/add','App\Http\Controllers\HelloContoroller@add');
+Route::post ('hello/add','App\Http\Controllers\HelloContoroller@create');
+Route::get ('hello/edit','App\Http\Controllers\HelloContoroller@edit');
+Route::post ('hello/edit','App\Http\Controllers\HelloContoroller@update');

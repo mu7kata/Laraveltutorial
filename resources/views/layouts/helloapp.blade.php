@@ -20,11 +20,12 @@ td{
 </head>
 <body>
   <h1>@yield('title') </h1>
-  @section('menuber')
+  @section('menubar')
   <ul>
   <p class='menutitle'>※メニュー</p>
   <li>@show</li>
   </ul>
+
   <hr size="1">
   <div class="content">
   @yield('content') 
