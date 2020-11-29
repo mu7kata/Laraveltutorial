@@ -2,7 +2,7 @@
 
 @section('title','Add')
 
-@section('menuber')
+@section('menubar')
  @parent
  新規作成ページ
 
