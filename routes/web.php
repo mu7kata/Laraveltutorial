@@ -31,3 +31,4 @@ Route::get ('hello/edit','App\Http\Controllers\HelloContoroller@edit');
 Route::post ('hello/edit','App\Http\Controllers\HelloContoroller@update');
 Route::get ('hello/del','App\Http\Controllers\HelloContoroller@del');
 Route::post ('hello/del','App\Http\Controllers\HelloContoroller@remove');
+Route::get ('hello/show','App\Http\Controllers\HelloContoroller@show');
