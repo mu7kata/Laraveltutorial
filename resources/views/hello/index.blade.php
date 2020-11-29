@@ -8,37 +8,16 @@
 @endsection
 
 @section('content')
-<p>{{$msg}}</p>
-@if(count($errors)> 0)
-<p>入力に問題があります。再入力してください</p>
-@endif
 <table>
-  <form action="/hello" method="post">
-    {{csrf_field()}}
+<tr><th>Name</th><th>Mail</th><th>Age</th></tr>
 
-
-    @if ($errors->has('msg'))
-    <tr>
-      <th>Error</th>
-      <td>{{$errors->first('msg')}}</td>
-    </tr>
-    @endif
-
-    <th>Message: </th>
-    </tr>
-    <tr>
-      <th></th>
-      <td><input type="text" name="msg" value="{{old('msg')}}"></td>
-    </tr>
-
-    <tr>
-      <th></th>
-      <td>
-        <input type="submit" value="send">
-      </td>
-    </tr>
-
-  </form>
+@foreach ($items as $item)
+<tr>
+<td>{{$item->name}}</td>
+<td>{{$item->mail}}</td>
+<td>{{$item->age}}</td>
+</tr>
+@endforeach
 </table>
 @endsection
 
