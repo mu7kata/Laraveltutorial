@@ -17,41 +17,27 @@
     {{csrf_field()}}
 
 
-    @if ($errors->has('name'))
+    @if ($errors->has('msg'))
     <tr>
       <th>Error</th>
-      <td>{{$errors->first('name')}}</td>
+      <td>{{$errors->first('msg')}}</td>
     </tr>
     @endif
-    <th>name: </th>
-    </tr>
-    <td><input type="text" name="name" value="{{old('name')}}"></td>
-    <tr>
-      @if ($errors->has('mail'))
-    <tr>
-      <th>Error</th>
-      <td>{{$errors->first('mail')}}</td>
-    </tr>
-    @endif
-    <th>mail: </th>
-    </tr>
-    <td><input type="text" name="mail" value="{{old('mail')}}"></td>
-    <tr>
 
-
-
-      @if ($errors->has('age'))
+    <th>Message: </th>
+    </tr>
     <tr>
-      <th>Error</th>
-      <td>{{$errors->first('age')}}</td>
+      <th></th>
+      <td><input type="text" name="msg" value="{{old('msg')}}"></td>
     </tr>
-    @endif
-    <th>aaaaaaaaaa: </th>
-    </tr>
-    <td><input type="text" name="age" value="{{old('age')}}"></td>
 
-    <th></th>
-    </tr><input type="submit" value="send">
+    <tr>
+      <th></th>
+      <td>
+        <input type="submit" value="send">
+      </td>
+    </tr>
+
   </form>
 </table>
 @endsection
