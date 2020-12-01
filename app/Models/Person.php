@@ -31,9 +31,18 @@ class Person extends Model
         return $query->where('age', '<=', $n);
     }
 
-    protected static function boot(){
+    protected static function boot()
+    {
         parent::boot();
         static::addGlobalScope(new ScopePerson);
-        }
-    
+    }
+
+    //値を用意しない場合はガードを使用
+    protected $guarded =array('id');
+
+    public static $rules = array(
+        'name'=>'required',
+        'mail'=>'email',
+        'age'=>'integer|min:0|max:150'
+    );
 }
