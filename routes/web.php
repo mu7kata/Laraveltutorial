@@ -44,3 +44,6 @@ Route::post ('person/edit','App\Http\Controllers\PersonController@update');
 
 Route::get ('person/del','App\Http\Controllers\PersonController@delete');
 Route::post ('person/del','App\Http\Controllers\PersonController@remove');
+Route::get ('board/index','App\Http\Controllers\PersonController@index');
+Route::get ('board/add','App\Http\Controllers\PersonController@add');
+Route::post ('board/add','App\Http\Controllers\PersonController@create');
