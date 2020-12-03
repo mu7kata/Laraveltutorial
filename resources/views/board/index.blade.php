@@ -12,7 +12,7 @@
 <tr><th>DAta</th></tr>
 @foreach ($items as $item)
 
-<tr><td>{{$item->getData}}</td></tr>
+<tr><td>{{ $item -> getData() }}</td></tr>
 @endforeach
 </table>
 @endsection

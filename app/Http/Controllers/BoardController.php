@@ -1,34 +1,33 @@
 <?php
-
 namespace App\Http\Controllers;
 
+use App\Board;
 use Illuminate\Http\Request;
-use App\Models\Board;
 
-class BoradController extends Controller
+class BoardController extends Controller
 {
-
 
     public function index(Request $request)
     {
-
         $items = Board::all();
-        return view('borad.index', ['item' => $items]);
+        return view('board.index', ['items' => $items]);
     }
 
     public function add(Request $request)
     {
-        return view('borad.add');
+        return view('board.add');
     }
 
     public function create(Request $request)
     {
-
         $this->validate($request, Board::$rules);
         $board = new Board;
         $form = $request->all();
         unset($form['_token']);
         $board->fill($form)->save();
-        return redirect('board');
+        return redirect('/board');
     }
+
 }
+
+?>

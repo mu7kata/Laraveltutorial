@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace App;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -10,15 +10,18 @@ class Board extends Model
     use HasFactory;
 
     protected $guarded = array('id');
-
-    public static $rules = array(
+    
+	public static $rules = array(
         'person_id' => 'required',
-        'title'=>'required',
-        'message'=>'requierd',
+        'title' => 'required',
+        'message' => 'required'
     );
 
-    public function gatData(){
+    public function getData(){
         return $this->id .':'.$this->title;
         }
 
 }
+
+
+    

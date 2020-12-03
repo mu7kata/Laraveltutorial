@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+
 class Person extends Model
 {
     use HasFactory;
@@ -38,11 +39,13 @@ class Person extends Model
     }
 
     //値を用意しない場合はガードを使用
-    protected $guarded =array('id');
+    protected $guarded = array('id');
 
     public static $rules = array(
-        'name'=>'required',
-        'mail'=>'email',
-        'age'=>'integer|min:0|max:150'
+        'name' => 'required',
+        'mail' => 'email',
+        'age' => 'integer|min:0|max:150'
     );
+
+  
 }
