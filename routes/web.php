@@ -4,7 +4,7 @@ use App\Http\Composers\HelloComposer;
 use App\Http\Controllers\HelloContoroller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\HelloMiddleware;
-
+use Monolog\Processor\WebProcessor;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,4 +47,8 @@ Route::post ('person/del','App\Http\Controllers\PersonController@remove');
 Route::get ('board','App\Http\Controllers\BoardController@index');
 Route::get ('board/add','App\Http\Controllers\BoardController@add');
 Route::post ('board/add','App\Http\Controllers\BoardController@create');
+Route::resource('rest','App\Http\Controllers\RestappController');
+
+Route::get('hello/rest','App\Http\Controllers\HelloContoroller@rest');
+
 
