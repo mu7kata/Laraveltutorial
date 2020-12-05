@@ -50,5 +50,8 @@ Route::post ('board/add','App\Http\Controllers\BoardController@create');
 Route::resource('rest','App\Http\Controllers\RestappController');
 
 Route::get('hello/rest','App\Http\Controllers\HelloContoroller@rest');
+Route::get('hello/session','App\Http\Controllers\HelloContoroller@ses_get');
+Route::post('hello/session','App\Http\Controllers\HelloContoroller@ses_put');
+
 
 
