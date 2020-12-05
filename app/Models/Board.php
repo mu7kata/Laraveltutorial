@@ -10,18 +10,20 @@ class Board extends Model
     use HasFactory;
 
     protected $guarded = array('id');
-    
-	public static $rules = array(
+
+    public static $rules = array(
         'person_id' => 'required',
         'title' => 'required',
         'message' => 'required'
     );
 
-    public function getData(){
-        return $this->id .':'.$this->title;
-        }
+    public function person()
+    {
+        return $this->belongsTo('App\Models\Person');
+    }
 
+    public function getData()
+    {
+        return $this->id . ': ' . $this->title . ' (' . $this->person->name . ')';
+    }
 }
-
-
-    

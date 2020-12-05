@@ -14,7 +14,7 @@ class Person extends Model
 
     public function getData()
     {
-        return $this->id . ': ' . $this->name . '(' . $this->age . ')';
+        return $this->id . ': ' . $this->name . ' (' . $this->age . ')';
     }
 
     public function scopeNameEqual($query, $str)
@@ -47,9 +47,10 @@ class Person extends Model
         'age' => 'integer|min:0|max:150'
     );
 
-    public function board()
+    public function boards()
     {
- return $this->hasOne('App\Board');
+        return $this->hasMany('App\Board');
     }
-  
+
+
 }

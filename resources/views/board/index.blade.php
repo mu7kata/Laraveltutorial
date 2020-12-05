@@ -12,7 +12,10 @@
 <tr><th>DAta</th></tr>
 @foreach ($items as $item)
 
-<tr><td>{{ $item -> getData() }}</td></tr>
+<tr>
+<td>{{ $item -> message}}</td>
+<td>{{ $item -> person->name}}</td>
+</tr>
 @endforeach
 </table>
 @endsection
