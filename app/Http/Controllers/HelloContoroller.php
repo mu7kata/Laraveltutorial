@@ -14,13 +14,13 @@ class HelloContoroller extends Controller
 {
     public function index(Request $request)
     {
+    
         $sort = $request->sort;
-        //$items =Person::orderby('name','asc')->simplePaginate(5);
-        //return view('hello.index',['items'=>$items]);
-        $items = Person::orderby($sort, 'asc')
-            ->simple_Paginate(5);
-        $param = ['items' => $items, 'sort' => $sort];
+        $items = Person::orderBy($sort, 'asc')
+            ->Paginate(5);
+        $param = ['items' => $items, 'sort' => $sort]; // , 'user' => $user];
         return view('hello.index', $param);
+
     }
 
     public function post(Request $request)
