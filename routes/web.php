@@ -52,6 +52,9 @@ Route::resource('rest','App\Http\Controllers\RestappController');
 Route::get('hello/rest','App\Http\Controllers\HelloContoroller@rest');
 Route::get('hello/session','App\Http\Controllers\HelloContoroller@ses_get');
 Route::post('hello/session','App\Http\Controllers\HelloContoroller@ses_put');
+Route::get('hello/auth','App\Http\Controllers\HelloContoroller@getAuth');
+Route::post('hello/auth','App\Http\Controllers\HelloContoroller@postAuth');
 
 
 
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

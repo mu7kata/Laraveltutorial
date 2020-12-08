@@ -9,18 +9,36 @@ use Illuminate\Foundation\Http\FormRequest;
 use Validator;
 use Illuminate\Support\Facades\DB;
 use App\Models\Person;
+use Illuminate\Support\Facades\Auth;
 
 class HelloContoroller extends Controller
 {
+    public function getAuth(Request $request)
+    {
+        $param = ['message' => 'ログインして下さい。'];
+        return view('hello.auth', $param);
+    }
+    
+    public function postAuth(Request $request)
+    {
+        $email = $request->email;
+        $password = $request->password;
+        if (Auth::attempt(['email' => $email, 
+                'password' => $password])) {
+            $msg = 'ログインしました。（' . Auth::user()->name . '）';
+        } else {
+            $msg = 'ログインに失敗しました。';
+        }
+        return view('hello.auth', ['message' => $msg]);
+    }
     public function index(Request $request)
     {
-    
+        $user = Auth::user();
         $sort = $request->sort;
         $items = Person::orderBy($sort, 'asc')
             ->Paginate(5);
-        $param = ['items' => $items, 'sort' => $sort]; // , 'user' => $user];
+        $param = ['items' => $items, 'sort' => $sort, 'user' => $user]; 
         return view('hello.index', $param);
-
     }
 
     public function post(Request $request)
@@ -114,4 +132,7 @@ class HelloContoroller extends Controller
         $request->session()->put('msg', $msg);
         return redirect('hello/session');
     }
+
+
+
 }
