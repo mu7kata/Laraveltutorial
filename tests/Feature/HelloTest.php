@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
@@ -29,5 +30,14 @@ class HelloTest extends TestCase
 
         $n = random_int(0,100);
         $this->assertLessThan(100,$n);
+
+        $response =$this->get('/');
+        $response->assertStatus(200);
+        $response=$this->get('/hello');
+        $response->assertStatus(302);
+    
+        $response->assertStatus(200);
+        $response=$this->get('/no_route');
+        $response->assertStatus(404);
     }
 }
