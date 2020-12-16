@@ -18,9 +18,10 @@
 	@if (Auth::check())
     <p>USER: {{$user->name . ' (' . $user->email . ')'}}</p>
     @else
-    <p>※ログインしていません。（<a href="/login">ログイン</a>｜
+    <p>※未ログイン（<a href="/login">ログイン</a>｜
         <a href="/register">登録</a>）</p>
     @endif
+   <a href="/hello/add" class="btn btn--orange">新規作成</a>
     <table>
     <tr>
         <th><a href="/hello?sort=name">name</a></th>
