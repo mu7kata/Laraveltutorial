@@ -25,7 +25,7 @@
         }
 
         th {
-            background-color: red;
+            background-color: #aaa;
             color: #fff;
             padding: 5px 10px;
         }
@@ -65,10 +65,12 @@
             color: #fff;
             width: 70px;
             background-color: #eb6100;
-             padding: 10px;
-             margin-bottom: 20px;
-             font-size: 16px;
-
+            padding: 10px;
+            margin-bottom: 20px;
+            font-size: 16px;
+            margin: 0;
+            margin-right: 20px;
+            float: left;
         }
 
         .btn--orange:hover,
@@ -76,6 +78,8 @@
             color: #fff;
             background: #f56500;
         }
+
+    
     </style>
 </head>
 

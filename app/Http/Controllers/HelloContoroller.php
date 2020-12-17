@@ -132,7 +132,7 @@ class HelloContoroller extends Controller
         $request->session()->put('msg', $msg);
         return redirect('hello/session');
     }
-
+   
 
 
 }
