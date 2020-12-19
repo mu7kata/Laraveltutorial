@@ -6,9 +6,9 @@ use Illuminate\Http\Request;
 
 class RedoController extends Controller
 {
-    public function index(){
-       $one = 1;
-        return $one;
-       
+    public function index()
+    {
+        $one = ['on'=>'1'];
+        return view('redo.index',$one);
     }
 }

@@ -23,7 +23,7 @@
     @endif
     <div class ='optioin' > 
    <a href="/hello/add" class="btn btn--orange">新規作成</a>
-   <p>登録者数：名</p>
+   <p>登録者数：{{$one}}名</p>
     </div>
 
     <div>
@@ -34,7 +34,7 @@
         <th><a href="/hello?sort=age">age</a></th>
         <th>edit</th>
     </tr>
-    @foreach ($items ?? '' as $item)
+    @foreach ($items as $item)
         <tr>
             <td>{{$item->name}}</td>
             <td>{{$item->mail}}</td>
@@ -45,7 +45,7 @@
     @endforeach
     </table>
 
-    {{ $items ?? ''->appends(['sort' => $sort])->links() }}
+    {{ $items  ->appends(['sort' => $sort])->links() }}
     </div>
 @endsection
 

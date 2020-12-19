@@ -21,7 +21,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('hello', 'App\Http\Controllers\HelloContoroller@index');
+
 Route::get('redo', 'App\Http\Controllers\RedoController@index');
+
 
 Route::post('hello', 'App\Http\Controllers\HelloContoroller@post');
 Route::get ('hello/add','App\Http\Controllers\HelloContoroller@add');

@@ -37,7 +37,8 @@ class HelloContoroller extends Controller
         $sort = $request->sort;
         $items = Person::orderBy($sort, 'asc')
             ->Paginate(5);
-        $param = ['items' => $items, 'sort' => $sort, 'user' => $user]; 
+        $one=DB::table('people')->count();;
+        $param = ['items' => $items, 'sort' => $sort, 'user' => $user,'one'=>$one]; 
         return view('hello.index', $param);
     }
 
@@ -133,6 +134,5 @@ class HelloContoroller extends Controller
         return redirect('hello/session');
     }
    
-
-
+   
 }
