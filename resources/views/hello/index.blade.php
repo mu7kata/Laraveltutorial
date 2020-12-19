@@ -12,8 +12,8 @@
 @section('menubar')
     @parent
     インデックスページ
-@endsection
 
+@endsection
 @section('content')
 	@if (Auth::check())
     <p>USER: {{$user->name . ' (' . $user->email . ')'}}</p>
@@ -22,8 +22,9 @@
         <a href="/register">登録</a>）</p>
     @endif
     <div class ='optioin' > 
-   <a href="/hello/add" class="btn btn--orange">新規作成</a>
    <p>登録者数：{{$one}}名</p>
+   <p>平均年齢：{{$average_age}}</p>
+   <a href="/hello/add" class="btn btn--orange">新規作成</a>
     </div>
 
     <div>

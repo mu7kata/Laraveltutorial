@@ -38,7 +38,9 @@ class HelloContoroller extends Controller
         $items = Person::orderBy($sort, 'asc')
             ->Paginate(5);
         $one=DB::table('people')->count();;
-        $param = ['items' => $items, 'sort' => $sort, 'user' => $user,'one'=>$one]; 
+        $average_ag =DB::table('people')->average('age');;
+        $average_age=round($average_ag,1);
+        $param = ['items' => $items, 'sort' => $sort, 'user' => $user,'one'=>$one,'average_age'=>$average_age]; 
         return view('hello.index', $param);
     }
 

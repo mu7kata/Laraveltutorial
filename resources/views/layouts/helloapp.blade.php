@@ -70,7 +70,7 @@
             font-size: 16px;
             margin: 0;
             margin-right: 20px;
-            float: left;
+            
         }
 
         .btn--orange:hover,
